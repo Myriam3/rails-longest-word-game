@@ -1,0 +1,21 @@
+<h1>Result</h1>
+
+<% if @letters %>
+  <h2>Letters</h2>
+  <ul>
+  <% @letters.each do |letter| %>
+    <li><%= letter.capitalize %></li>
+  <% end %>
+  </ul>
+<% end %>
+<% if @word %>
+  <p>Your word: <%= @word %></p>
+<% end %>
+
+<% if @error %>
+  <p>❌ <%= @error %></p>
+<% elsif @word %>
+  <p>✅ Congratulations!</p>
+<% end %>
+
+<%= link_to "Play again", new_path %>
